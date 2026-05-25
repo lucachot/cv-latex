@@ -1,0 +1,32 @@
+services:
+  cv-builder:
+    # 1. Target the local container layer built by container-dev repo
+    image: localhost/local/dev-node-latex:latest
+    container_name: cv-latex-dev
+
+    # 2. Keep the container alive as a quiet background service anchor
+    command: sleep infinity
+
+    volumes:
+      # 3. Mount the local CV project files (tex files, images, etc.) into the workspace
+      - .:/workspace:Z
+
+      # 4. Pass host's Git configurations inside
+      - ~/.gitconfig:/etc/gitconfig:ro,Z
+
+      # Shares the host SSH agent
+      - ${SSH_AUTH_SOCK}:/run/ssh-agent.sock:ro,z
+
+      #6. Route host's nvim configuration inside
+      - ~/.config/nvim:/root/.config/nvim:z
+
+    environment:
+      # 7. Instruct the internal tools exactly where mapped SSH socket is located
+      - SSH_AUTH_SOCK=/run/ssh-agent.sock
+
+    working_dir: /workspace
+
+    security_opt:
+      # 8. CRITICAL FOR BAZZITE (SELinux): Prevents access permission errors when
+      # streaming host resources (like the SSH agent socket or the source folders).
+      - label=disable
