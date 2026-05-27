@@ -85,7 +85,7 @@
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 	\textbf{\LARGE Luca Choteborsky} &
 	\href{mailto:luca.choteborsky@outlook.com}{luca.choteborsky@outlook.com}\\
-	Undergraduate Computer Scientist at the University of Cambridge
+	Production Engineer at Meta | M.Eng Computer Science, University of Cambridge
 	& +44 7889 291392 \\ \href{https://github.com/LucaChot}{Github}
 	\href{https://www.linkedin.com/in/luca-choteborsky-72ba70190/}{LinkedIn}
 \end{tabular*}
@@ -119,9 +119,11 @@ ML platforms.
 	  hands-on experience with data flow programming using Google TensorFlow and
 	  cluster computing, as well as a academic knowledge on the next generation of
 	  distributed systems.}
-  \resumeItem{}{Completed a year-long programming project on distributed
-	  systems resource allocation and task scheduling, culminating in a 10,000-word
-	  technical report.}
+  \resumeItem{}{Dissertation: built and evaluated a federated Kubernetes
+	  scheduler (Go) using online FPCA-based load prediction and distributed
+	  gRPC aggregation across cluster nodes, outperforming the default
+	  kube-scheduler on utilisation balance and job completion time across
+	  CPU-intensive and ML inference workloads.}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -155,7 +157,7 @@ ML platforms.
   \begin{tabular}{l@	{} l@{\hskip 1in}}
 	  \textbf{Programming Languages} & \hspace{.5cm} Rust, C++, C, C\#, Python, Go, Java, SQL,
 	  OCaml, Bash, Perl, \LaTeX                                                                           \\
-	  \textbf{Framework \& Tools}    & \hspace{.5cm} React, JavaScript, TypeScript, Google Cloud VMs, AWS \\
+	  \textbf{Framework \& Tools}    & \hspace{.5cm} Kubernetes, Docker, React, JavaScript, TypeScript, Google Cloud VMs, AWS \\
 	  \textbf{Networking \& Systems} & \hspace{.5cm} BGP, DHCP, ZTP, Thrift/gRPC
   \end{tabular}
   \resumeSubHeadingListEnd
@@ -216,35 +218,33 @@ ML platforms.
    }
 
   \vspace{-0.2cm}
-  \section{Competitions}
-   {\renewcommand\labelitemi{}
-    \resumeSubHeadingListStart
+  \section{Projects}
+  {\renewcommand\labelitemi{}
+   \resumeSubHeadingListStart
 
-    \resumeSubheading
-    {AI Accelerator, Teens in AI}{September 2019}{}{}
-    {\vspace{-5.0mm}}
-    \resumeItemListStart
-    \resumeItem{}{Participated in a selective two-week selective program,
-	    working in a team to design an AI-based solution for hydroponic
-	    farming.}
-    \resumeItem{}{The project won first place and was presented to
-	    experts at an AI convention.}
-    \resumeItemListEnd
+   \resumeSubheading
+   {Pronto -- Federated Kubernetes Scheduler}{}
+   {Go, Kubernetes Scheduling Framework, gRPC, Docker, FPCA}
+   {\href{https://github.com/LucaChot/pronto-framework}{github.com/LucaChot/pronto-framework}}
+   \resumeItemListStart
+   \resumeItem{}{Designed and implemented a custom Kubernetes scheduler plugin
+	   using the official Scheduling Framework API, replacing the default
+	   scoring and filtering logic with a signal-based placement algorithm.}
+   \resumeItem{}{Applied Functional PCA (FPCA) across a fleet of worker nodes
+	   to distil real-time CPU and memory telemetry into a scalar load signal,
+	   enabling the scheduler to route pods to nodes with genuine available
+	   capacity rather than relying on declared resource requests.}
+   \resumeItem{}{Built a distributed aggregation layer using gRPC streaming,
+	   where per-node FPCA estimates are continuously merged into a shared
+	   global embedding — a form of federated learning applied to infrastructure
+	   load prediction.}
+   \resumeItem{}{Evaluated against the default kube-scheduler across CPU-intensive
+	   and ML inference workloads, demonstrating improved node utilisation
+	   balance and reduced job completion times under batch workloads.}
+   \resumeItemListEnd
 
-    \resumeSubheading
-    {NASA International Space Apps Challenge, Acorn Aspirations}{October 2018}
-    {}{}
-    {\vspace{-5mm}}
-    \resumeItemListStart
-    \resumeItem{}{Engaged in a two-day Hackathon, designing a prototype app to
-	    raise public awareness of NASA's initiatives.}
-    \resumeItem{}{Learned the basics of working with APIs and how to pitch
-	    ideas.}
-    %    {\vspace{1.8mm}}
-    \resumeItemListEnd
-
-    \resumeSubHeadingListEnd
-   }
+   \resumeSubHeadingListEnd
+  }
 
   \vspace{-0.2cm}
   \section{Hobbies and Interests}
