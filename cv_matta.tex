@@ -1,0 +1,241 @@
+%-----------TEMPLATE INFO--------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% Website: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+%-----------DOCUMENT INFO--------------
+% Author : Marcus Handley
+% Website:
+%------------------------
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\definecolor{green}{RGB}{0,145,147}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\Large
+}{}{0em}{\textcolor{green}}[\color{green}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item[--]
+    \textbf{#1}{#2 \vspace{-2pt}}
+  }
+
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \small{#2} \\
+      \textbf{#3} &  \small{#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProjectHeading}[3]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} \\
+      \small{#2} \\
+      \small{\href{#3}{#3}} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{\small{#1}}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{ }
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-0.4cm}}
+\newcommand{\resumeItemListStart}{\begin{itemize}
+    [labelsep=1ex, itemindent=0em, leftmargin=1em
+    ]}
+
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+	\textbf{\LARGE Luca Choteborsky} &
+	\href{mailto:luca.choteborsky@outlook.com}{luca.choteborsky@outlook.com}\\
+	Production Engineer at Meta | M.Eng Computer Science, University of Cambridge
+	& +44 7889 291392 \\ \href{https://github.com/lucachot}{Github}
+	\href{https://www.linkedin.com/in/luca-choteborsky-72ba70190/}{LinkedIn}
+\end{tabular*}
+
+\section{Profile}
+Production Engineer at Meta; M.Eng Computer Science from the University of
+Cambridge with coursework in ML Systems (PyTorch) and distributed data processing.
+Built and operated distributed infrastructure supporting AI training clusters
+at scale, with hands-on experience in Kubernetes orchestration.
+\vspace{-0.2cm}
+
+%-----------ACADEMICS------------
+\section{Academics}
+ {\renewcommand\labelitemi{}
+
+  \resumeSubHeadingListStart
+
+  \resumeSubheading
+  {University of Cambridge}{October 2024 -- June 2025}
+  {M.Eng Computer Science}{Distinction}
+  \resumeItemListStart
+  \resumeItem{}{Principles of Machine Learning Systems: Studied and
+	  implemented algorithms and system techniques in PyTorch supporting
+	  training and inference of ML models across a spectrum of computing systems.}
+  \resumeItem{}{Large-scale data processing and optimisation: Hands-on
+	  experience with dataflow programming using TensorFlow and cluster
+	  computing; academic grounding in next-generation distributed systems.}
+  \resumeItem{}{Dissertation: built and evaluated a federated Kubernetes
+	  scheduler (Go) using online FPCA-based load prediction and distributed
+	  gRPC aggregation, outperforming the default kube-scheduler on
+	  utilisation balance and job completion time across ML inference workloads.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {University of Cambridge}{October 2021 -- June 2024}
+  {BA Computer Science}{Double 1st Class}
+  \resumeItemListStart
+  \resumeItem{}{Machine Learning and Real-world Data: practicals in
+	  statistical classification (Naive Bayes), sequence modelling (Hidden
+	  Markov Models), and social network analysis; experimental methodology
+	  including cross-validation, statistical testing, and evaluation design.}
+  \resumeItem{}{Concurrent and Distributed Systems: concurrency primitives,
+	  distributed algorithms, consistency models, and fault-tolerant
+	  message-passing systems.}
+  \resumeItem{}{Advanced Graphics and Image Processing: rendering equation
+	  and path tracing, image-based rendering (light fields and Neural
+	  Radiance Fields), optimization-based image processing, and colour
+	  science; techniques directly underpinning modern computer vision
+	  systems.}
+  \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+  \vspace{-0.2cm}
+  \section{Technical Skills}
+  \resumeSubHeadingListStart
+  \item
+  \begin{tabular}{l@	{} l@{\hskip 1in}}
+	  \textbf{Programming Languages} & \hspace{.5cm} Python, Go, C++, Rust, C, Java, SQL, OCaml, Bash, \LaTeX  \\
+	  \textbf{ML \& Frameworks}      & \hspace{.5cm} PyTorch, TensorFlow, Kubernetes, Docker, gRPC
+  \end{tabular}
+  \resumeSubHeadingListEnd
+
+  %-----------EXPERIENCE-----------------
+  \vspace{-0.2cm}
+  \section{Professional Experience}
+
+   {\renewcommand\labelitemi{}
+    \resumeSubHeadingListStart
+
+    \resumeSubheading
+    {Meta}{United Kingdom}
+    {Production Engineer, Network AI PE}{September 2025 -- Present}
+    \resumeItemListStart
+    \resumeItem{NVLINK Bug Discovery \& Automated Repair: }{Root-caused a
+	    configuration misapplication affecting \textgreater25\% of the NVLINK
+	    switch fleet ($\sim$40,000 devices). Devised an automated mechanism to
+	    detect impacted switches and apply targeted repair fleet-wide.}
+    \resumeItem{Production Service Migration: }{Migrated APIs for a network
+	    drain service handling \textgreater1 million daily requests; implemented
+	    A/B testing to guarantee zero user traffic impact during transition.}
+    \resumeItem{Drain Monitoring \& Observability: }{Used existing data
+	    collection infrastructure to validate drain state across a fleet of
+	    100,000+ switches; performed aggregations on collected data to prevent
+	    alert noise from scaling with fleet size, minimising oncall burden.}
+    \resumeItem{CEL Compiler CLI Tool (Go): }{Added CEL compilation to an
+	    existing Go CLI tool, parsing CEL configuration files and generating
+	    device domain filters. Enabled dev-time testing across all consuming
+	    teams, increasing validation coverage without increasing canary
+	    reservations.}
+    \resumeItemListEnd
+
+    \resumeSubheading
+    {Zilliqa}{London, United Kingdom}
+    {Intern, Software Engineering}{July -- September 2023}
+    \resumeItemListStart
+    \resumeItem{}{Modified the Ethereum block explorer Otterscan using React
+	    and TypeScript; worked with Ethereum Virtual Machine APIs in C++ for
+	    cross-chain interoperability.}
+    \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+   }
+
+  \vspace{-0.2cm}
+  \section{Projects}
+  {\renewcommand\labelitemi{}
+   \resumeSubHeadingListStart
+
+   \resumeProjectHeading
+   {Pronto -- Federated Kubernetes Scheduler}
+   {Go, Kubernetes Scheduling Framework, gRPC, Docker, FPCA}
+   {https://github.com/lucachot/pronto-framework}
+   \resumeItemListStart
+   \resumeItem{}{Evaluated against the default kube-scheduler on CPU-intensive
+	   and ML inference workloads, demonstrating improved node utilisation
+	   balance and reduced job completion times under batch workloads.}
+   \resumeItem{}{Built a distributed aggregation layer using gRPC streaming
+	   where per-node FPCA estimates are continuously merged into a shared
+	   global embedding --- a form of federated learning applied to
+	   infrastructure load prediction.}
+   \resumeItem{}{Implemented a custom Kubernetes scheduler plugin via the
+	   official Scheduling Framework API, routing pods to nodes based on
+	   real-time CPU and memory telemetry rather than declared resource requests.}
+   \resumeItemListEnd
+
+   \resumeProjectHeading
+   {Light Field Viewer}
+   {WebGL, GLSL, JavaScript}
+   {https://github.com/lucachot/lfv-webgl}
+   \resumeItemListStart
+   \resumeItem{}{Built a WebGL/GLSL shader pipeline rendering interactive
+	   light field scenes from multi-image arrays, with real-time aperture
+	   control, focal plane adjustment, and XYZ/orbital camera navigation.}
+   \resumeItem{}{Wrote a Python preprocessing pipeline to parse and reformat
+	   raw light field image data (Stanford datasets) into the texture layout
+	   consumed by the GPU renderer.}
+   \resumeItemListEnd
+
+   \resumeSubHeadingListEnd
+  }
+
+ }
+\end{document}
